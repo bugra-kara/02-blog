@@ -20,7 +20,7 @@ export const UserProvider = ({children}) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await api('POST', 'https://bugradev-blog.onrender.com//api/auth/login', { email: state.email, password: state.password })
+        const response = await api('POST', 'https://bugradev-blog.onrender.com/api/auth/login', { email: state.email, password: state.password })
         if(response.status === 200) {
           dispatch({type: HANDLE_SUBMIT, payload: response.data.data})
         }
