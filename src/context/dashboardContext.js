@@ -28,7 +28,7 @@ export const DashboardProvider = ({children}) => {
         dispatch({type: LOADING})
         if(section === 'post') {
             try {
-                const response = await api('GET', `http://localhost:3454/api/dashboard/edit-post/${page}`)
+                const response = await api('GET', `https://bugradev-blog.onrender.com//api/dashboard/edit-post/${page}`)
                 
                 if(response.status === 200) {
                     dispatch({type: HANGLE_SINGLE_POST, payload: response.data.data})
@@ -40,7 +40,7 @@ export const DashboardProvider = ({children}) => {
         }
         if(section === 'categories') {
             try {
-                const response = await api('GET', 'http://localhost:3454/api/public/categories')
+                const response = await api('GET', 'https://bugradev-blog.onrender.com//api/public/categories')
                 if(response.status === 200) {
                     dispatch({type: HANDLE_CATEGORIES, payload: response.data.data})
                 }
@@ -52,7 +52,7 @@ export const DashboardProvider = ({children}) => {
         if(section === 'tags') {
             dispatch({type: LOADING})
             try {
-                const response = await api('GET', `http://localhost:3454/api/public/tags?page=${page}`)
+                const response = await api('GET', `https://bugradev-blog.onrender.com//api/public/tags?page=${page}`)
                 if(response.status === 200) {
                     
                     dispatch({type: HANDLE_TAGS, payload: response.data})
@@ -65,7 +65,7 @@ export const DashboardProvider = ({children}) => {
         if(section === 'posts') {
             dispatch({type: LOADING})
             try {
-                const response = await api('GET', `http://localhost:3454/api/dashboard/posts`)
+                const response = await api('GET', `https://bugradev-blog.onrender.com//api/dashboard/posts`)
                 if(response.status === 200) {
                     dispatch({type: HANDLE_POSTS, payload: response.data})
                 }
@@ -80,7 +80,7 @@ export const DashboardProvider = ({children}) => {
         dispatch({type: LOADING})
         if(section === 'categories') {  
             try {
-                const response = await api('POST', `http://localhost:3454/api/dashboard/create-categorie`, { ...itemInfo })
+                const response = await api('POST', `https://bugradev-blog.onrender.com//api/dashboard/create-categorie`, { ...itemInfo })
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
                     getSection('categories')
@@ -97,7 +97,7 @@ export const DashboardProvider = ({children}) => {
         if(section === 'tags') {
             try {
                 
-                const response = await api('POST', `http://localhost:3454/api/dashboard/create-tag`, { ...itemInfo })
+                const response = await api('POST', `https://bugradev-blog.onrender.com//api/dashboard/create-tag`, { ...itemInfo })
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
                 }
@@ -116,7 +116,7 @@ export const DashboardProvider = ({children}) => {
         dispatch({type: LOADING})
         if(section === 'categories') {
             try {
-                const response = await api('PATCH', `http://localhost:3454/api/dashboard/single-categorie/${itemInfo.category_id}`, { name: itemInfo.category_name, slug: itemInfo.category_slug })
+                const response = await api('PATCH', `https://bugradev-blog.onrender.com//api/dashboard/single-categorie/${itemInfo.category_id}`, { name: itemInfo.category_name, slug: itemInfo.category_slug })
                 
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
@@ -133,7 +133,7 @@ export const DashboardProvider = ({children}) => {
         }
         if(section === 'tags') {
             try {
-                const response = await api('PATCH', `http://localhost:3454/api/dashboard/single-tag/${itemInfo.tag_id}`, { name: itemInfo.tag_name, slug: itemInfo.tag_slug })
+                const response = await api('PATCH', `https://bugradev-blog.onrender.com//api/dashboard/single-tag/${itemInfo.tag_id}`, { name: itemInfo.tag_name, slug: itemInfo.tag_slug })
                 
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
@@ -155,7 +155,7 @@ export const DashboardProvider = ({children}) => {
         if(section === 'categories') {
             try {
                 console.log(itemInfo);
-                const response = await api('DELETE', `http://localhost:3454/api/dashboard/single-categorie/${itemInfo.category_id}`, {name : itemInfo.category_name})
+                const response = await api('DELETE', `https://bugradev-blog.onrender.com//api/dashboard/single-categorie/${itemInfo.category_id}`, {name : itemInfo.category_name})
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
                     dispatch({type: DELETE_CONTENT, payload: itemInfo})
@@ -170,7 +170,7 @@ export const DashboardProvider = ({children}) => {
             dispatch({type: LOADING})
             try {
                 console.log(itemInfo);
-                const response = await api('DELETE', `http://localhost:3454/api/dashboard/single-tag/${itemInfo.tag_id}`, {name : itemInfo.tag_name})
+                const response = await api('DELETE', `https://bugradev-blog.onrender.com//api/dashboard/single-tag/${itemInfo.tag_id}`, {name : itemInfo.tag_name})
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
                     dispatch({type: DELETE_CONTENT, payload: itemInfo})
@@ -184,7 +184,7 @@ export const DashboardProvider = ({children}) => {
         if(section === 'posts') {
             dispatch({type: LOADING})
             try {
-                const response = await api('DELETE', `http://localhost:3454/api/dashboard/single-post/${itemInfo.post_uid}`,{status: itemInfo.status})
+                const response = await api('DELETE', `https://bugradev-blog.onrender.com//api/dashboard/single-post/${itemInfo.post_uid}`,{status: itemInfo.status})
                 if(response.data.result === 'succes') {
                     notify(200, response.data.msg)
                     dispatch({type: DELETE_CONTENT, payload: itemInfo})
@@ -203,7 +203,7 @@ export const DashboardProvider = ({children}) => {
         dispatch({type: LOADING})
         try {
             console.log(content);
-            const response = await api('POST', `http://localhost:3454/api/dashboard/create-post`, { ...content })
+            const response = await api('POST', `https://bugradev-blog.onrender.com//api/dashboard/create-post`, { ...content })
             if(response.data.result === 'succes') {
                 notify(200, response.data.msg)
             }
@@ -220,7 +220,7 @@ export const DashboardProvider = ({children}) => {
         
         dispatch({type: HANDLE_BUTTON})
         try {
-            const response = await api('PATCH', `http://localhost:3454/api/dashboard/single-post/${content.id}`, { ...content })
+            const response = await api('PATCH', `https://bugradev-blog.onrender.com//api/dashboard/single-post/${content.id}`, { ...content })
             console.log(response.data);
             if(response.data.result === 'succes') {
                 notify(200, response.data.msg)

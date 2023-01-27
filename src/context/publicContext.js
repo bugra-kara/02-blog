@@ -19,7 +19,7 @@ export const PublicProvider = ({children}) => {
     
     const getAllContents = async () => {
         try {
-            const response = await api('GET', `http://localhost:3454/api/public/posts`)
+            const response = await api('GET', `https://bugradev-blog.onrender.com//api/public/posts`)
                 if(response.status === 200) {
                     dispatch({type: HANDLE_POSTS, payload: response.data})
                 }
@@ -29,7 +29,7 @@ export const PublicProvider = ({children}) => {
     }
     const getSinglePost = async (id) => {
         try {
-            const response = await api('GET', `http://localhost:3454/api/public/single-post/${id}`)
+            const response = await api('GET', `https://bugradev-blog.onrender.com//api/public/single-post/${id}`)
                 if(response.status === 200) {
                     dispatch({type: HANDLE_SINGLE_POST, payload: response.data})
                 }
@@ -39,7 +39,7 @@ export const PublicProvider = ({children}) => {
     }
     const getCategories = async () => {
         try {
-            const response = await api('GET', `http://localhost:3454/api/public/categories`)
+            const response = await api('GET', `https://bugradev-blog.onrender.com//api/public/categories`)
                 if(response.status === 200) {
                     dispatch({type: HANDLE_CATEGORIES, payload: response.data})
                 }
@@ -49,7 +49,7 @@ export const PublicProvider = ({children}) => {
     }
     const getSingleCategorie = async (id) => {
         try {
-            const response = await api('GET', `http://localhost:3454/api/public/single-categorie/${id}`)
+            const response = await api('GET', `https://bugradev-blog.onrender.com//api/public/single-categorie/${id}`)
                 if(response.status === 200) {
                     dispatch({type: HANDLE_SINGLE_CATEGORIE, payload: response.data})
                 }
