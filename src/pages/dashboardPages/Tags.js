@@ -50,7 +50,7 @@ function Tags() {
     }
   }
   useEffect(()=> {
-    if(tags.length === 0 || page === 0){
+    if( (tags !== undefined && tags?.length === 0) || page === 0){
       getSection('tags', page)
     }
   },[])

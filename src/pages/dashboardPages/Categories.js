@@ -113,7 +113,7 @@ function Categories() {
             </thead>
             <tbody className=''>
             {
-              categories.map((item, index) => {
+              categories !== undefined ? categories.map((item, index) => {
                 if(index % 2 === 0) {
                   return (
                     <tr key={index} className='align-top bg-white group'>
@@ -159,6 +159,7 @@ function Categories() {
                   )
                 }
               })
+              : ""
             }
             </tbody>
           </table>
