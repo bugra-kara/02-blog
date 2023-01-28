@@ -164,7 +164,7 @@ function Categories() {
             </tbody>
           </table>
           <div className='w-full float-right text-right pt-3 text-sm font-bold'>
-            {categories.length} öge
+            { categories !== undefined ? categories.length : ""} öge
           </div>
         </div>
       </div>
