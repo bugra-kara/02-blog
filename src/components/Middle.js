@@ -83,17 +83,17 @@ const Middle = () => {
                                 </Link>
                             </div>
                             <div className='basis-auto w-full sm:w-auto sm:basis-8/12 md:basis-7/12 lg:basis-9/12 pl-4 pr-2 sm:pr-4  space-y-3 py-3'>
+                                <div key={index} className='text-left space-x-2 text-ah uppercase font-extrabold text-small sm:text-xs'>
                                 {
                                     item.categories.map((item, index)=> {return (
-                                        <div key={index} className='text-left space-x-2 text-ah uppercase font-extrabold text-small sm:text-xs'>
                                             <Link >
                                                 <span className='uppercase'>
                                                     {item}
                                                 </span>
                                             </Link>
-                                        </div>
                                     )})
                                 }
+                                </div>
                                 <div className='flex w-full text-left'>
                                     <Link to={item.slug} className='font-bold sm:font-bold xl:font-extrabold text-base sm:text-xl lg:text-xlx'>
                                     {item.title}

@@ -18,15 +18,13 @@ const Layout = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<PublicProvider><Navbar/></PublicProvider>}>
-          <Route path='/' element={<PublicProvider><Sidebar/></PublicProvider>}>
-            <Route index element={<PublicProvider><Home/></PublicProvider>}/>
-            <Route path='/:id' element={<PublicProvider><SinglePage/></PublicProvider>}/>
-            <Route path='/kategori/:id' element={<PublicProvider><Category/></PublicProvider>}/>
-            <Route path='/yazar/:id' element={<PublicProvider><Author/></PublicProvider>}/>
-            <Route path='/about' element={<PublicProvider><About/></PublicProvider>}/>
-            <Route path='/second' element={<PublicProvider><Second/></PublicProvider>}/>
-            <Route path='*' element={<Error/>}/>
-          </Route>
+          <Route index element={<PublicProvider><Home/></PublicProvider>}/>
+          <Route path='/:id' element={<PublicProvider><SinglePage/></PublicProvider>}/>
+          <Route path='/kategori/:id' element={<PublicProvider><Category/></PublicProvider>}/>
+          <Route path='/yazar/:id' element={<PublicProvider><Author/></PublicProvider>}/>
+          <Route path='/about' element={<PublicProvider><About/></PublicProvider>}/>
+          <Route path='/second' element={<PublicProvider><Second/></PublicProvider>}/>
+          <Route path='*' element={<Error/>}/>
         </Route>
         <Route path='/login' element={<UserProvider><Login/></UserProvider>}/>
         <Route path='/dashboard'

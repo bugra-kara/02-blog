@@ -1,5 +1,4 @@
 import React from 'react'
-import image from '../assets/images/bitcoin-86.jpg'
 import { Link } from 'react-router-dom'
 import {AiFillEye, AiFillHeart} from 'react-icons/ai'
 import {FaComment} from 'react-icons/fa'
