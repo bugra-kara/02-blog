@@ -20,7 +20,8 @@ export const PublicProvider = ({children}) => {
     const getAllContents = async () => {
         try {
             const response = await api('GET', `https://bugradev-blog.onrender.com/api/public/posts`)
-                if(response.status === 200) {
+            console.log(response);
+                if(response.data.result !== 'failed') {
                     dispatch({type: HANDLE_POSTS, payload: response.data})
                 }
         } catch (error) {
