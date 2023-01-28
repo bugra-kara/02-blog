@@ -7,7 +7,7 @@ import {
 
 const publicReducer = (state, action) => {
     if(action.type === HANDLE_POSTS) {
-        const { headline, lastNews, bitcoin, otherNews } = action.payload.data
+        const { headline, lastNews, bitcoin, otherNews } = action?.payload?.data
         return {...state, headline: headline, middleFirst: lastNews, middleThird: bitcoin, middleFourth: otherNews}
     }
     if(action.type === HANDLE_SINGLE_POST) {

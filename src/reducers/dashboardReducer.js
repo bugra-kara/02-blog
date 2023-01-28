@@ -14,7 +14,8 @@ import {
 
 const dashboardReducer = (state, action) => {
     if(action.type === HANGLE_SINGLE_POST) {
-        const {title, subtitle, content, slug, status, categories, tags, post_uid, is_headline} = action.payload[0]
+        console.log(action.payload);
+        const {title, subtitle, content, slug, status, categories, tags, post_uid, is_headline} = action?.payload[0]
         return {...state, edit: {...state.edit, id: post_uid, title: title, subTitle: subtitle, content: content, slug: slug, status: status, categories: categories, tags: tags, isheadline: is_headline}}
     }
     if(action.type === HANDLE_POSTS) {
