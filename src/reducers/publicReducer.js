@@ -7,8 +7,15 @@ import {
 
 const publicReducer = (state, action) => {
     if(action.type === HANDLE_POSTS) {
-        const { headline, lastNews, bitcoin, otherNews } = action?.payload?.data
-        return {...state, headline: headline, middleFirst: lastNews, middleThird: bitcoin, middleFourth: otherNews}
+        console.log(action.payload);
+        if(action.payload.data.headline !== undefined){
+            const { headline, lastNews, bitcoin, otherNews } = action?.payload?.data
+            return {...state, headline: headline, middleFirst: lastNews, middleThird: bitcoin, middleFourth: otherNews}
+        }
+        else {
+            const { lastNews, bitcoin, otherNews } = action?.payload?.data
+            return {...state, headline: [], middleFirst: lastNews, middleThird: bitcoin, middleFourth: otherNews}
+        }
     }
     if(action.type === HANDLE_SINGLE_POST) {
         return {...state, post:action.payload.data[0]}
