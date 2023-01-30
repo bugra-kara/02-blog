@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<PublicProvider><Navbar/></PublicProvider>}>
+        <Route element={<PublicProvider><Navbar/></PublicProvider>}>
           <Route index element={<PublicProvider><Home/></PublicProvider>}/>
           <Route path='/:id' element={<PublicProvider><SinglePage/></PublicProvider>}/>
           <Route path='/kategori/:id' element={<PublicProvider><Category/></PublicProvider>}/>

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/images/koinbulteni_logo_1.png'
 import {BsNewspaper, BsCurrencyBitcoin} from 'react-icons/bs'
-import {TiImage, TiThLargeOutline} from 'react-icons/ti'
+import {TiImage} from 'react-icons/ti'
 import {GiToken} from 'react-icons/gi'
 import {MdKeyboardArrowDown} from 'react-icons/md'
 import {AiOutlineSearch} from 'react-icons/ai'
@@ -18,14 +18,16 @@ const Navbar = () => {
     const getData = async () => {
       await getCategories()
   }
-  getData()
+  if(categories.length === 0) {
+    getData()
+  }
   },[])
   return (
     <>
     {
       mobilNav 
       ?
-      <NavbarMobile mobilNav={mobilNav} setMobilNav={setMobilNav}/>
+      <NavbarMobile mobilNav={mobilNav} categories={categories} setMobilNav={setMobilNav}/>
       : ""
     }
     <div className='bg-white sticky top-0 z-40'>
@@ -35,7 +37,7 @@ const Navbar = () => {
             <li className='flex'>
               <div className='flex-auto'>
                 <Link to='/'>
-                  <img className='h-12 w-auto sm:h-10 md:h-12 lg:h-12 xl:h-16' src={Logo} alt="logo" />
+                  <img className='h-12 w-auto sm:h-10 md:h-12' src={Logo} alt="logo" />
                 </Link>
               </div>
             </li>
@@ -117,16 +119,6 @@ const Navbar = () => {
               <div className='flex items-center relative '>
                 <button className=''><RxHamburgerMenu className='h-6 w-6' onClick={()=> setMobilNav(!mobilNav)}/></button>
               </div>
-            </li>
-            <li className='flex lg:hidden'>
-              <div className='flex items-center relative '>
-                <button className=''><TiThLargeOutline className='h-6 w-6'/></button>
-              </div>
-            </li>
-            <li className='hidden lg:hidden'>
-              <button >
-                <TiThLargeOutline/>
-              </button>
             </li>
           </ul>
         </div>

@@ -5,16 +5,17 @@ import { usePublicContext } from '../context/publicContext'
 const Home = () => {
   const { getAllContents, loading, headline} = usePublicContext()
   const MainComp = lazy(()=> import('../components/Main'))
+  /* used timeout because of the database fetch problem */
   useEffect(()=> {
-    console.log("here");
+    if(headline.length === 0) {
       getAllContents()
+    }
   },[])
-  console.log(loading);
   if(!loading) {
     return (
       <main className=''>
         <Caption />
-          <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <MainComp />
         </Suspense>
       </main>

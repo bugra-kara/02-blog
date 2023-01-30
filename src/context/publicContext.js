@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from 'react'
 import reducer from '../reducers/publicReducer'
-import { HANDLE_CATEGORIES, HANDLE_POSTS, HANDLE_SINGLE_POST, HANDLE_SINGLE_CATEGORIE, LOADING } from '../utils.js/actions'
+import { HANDLE_CATEGORIES, HANDLE_POSTS, HANDLE_SINGLE_POST, HANDLE_SINGLE_CATEGORIE, LOADING, HANDLE_MANUEL_CATEGORIES } from '../utils.js/actions'
 import api from '../utils.js/api'
 const initialState =  {
     post: [],
@@ -22,7 +22,6 @@ export const PublicProvider = ({children}) => {
         dispatch({type: LOADING})
         try {
             const response = await api('GET', `https://bugradev-blog.onrender.com/api/public/posts`)
-            console.log(response);
                 if(response.data.result !== 'failed') {
                     dispatch({type: HANDLE_POSTS, payload: response.data})
                 }
@@ -67,7 +66,7 @@ export const PublicProvider = ({children}) => {
         }
     }
     return (
-        <PublicContext.Provider value={{...state,getAllContents, getSinglePost, getCategories, getSingleCategorie}}>{children}</PublicContext.Provider>
+        <PublicContext.Provider value={{...state, getAllContents, getSinglePost, getCategories, getSingleCategorie}}>{children}</PublicContext.Provider>
       )
 }
 

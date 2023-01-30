@@ -3,7 +3,7 @@ import { Navigate, Outlet, redirect} from 'react-router-dom'
 import { useUserContext } from '../context/userContext'
 
 function Login() {
-    const { handleChange, handleSubmit, email, password, username } = useUserContext()
+    const { handleChange, handleSubmit, email, password } = useUserContext()
     if(localStorage.getItem('username')) {
         return <Navigate to="/dashboard"/>
     }

@@ -1,6 +1,8 @@
 import React from 'react'
 import {BiWorld} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import moment from 'moment'
+import 'moment/locale/tr'
 const LeftSidebar = () => {
   return (
     <div className='basis-2/12 flex-col sticky h-screen top-16 w-full space-y-5 py-4 px-1 order-last sm:order-1'>
@@ -8,11 +10,11 @@ const LeftSidebar = () => {
             <div className='flex  p-3'>
                 <div className='block text-left -space-y-3'>
                     <p className='text-day'>
-                        Pazartesi
+                        {moment().format('dddd')}
                     </p>
-                    <p className='text-h text-date font-bold'>16</p>
+                    <p className='text-h text-date font-bold'>{moment().format('D')}</p>
                     <p className='text-day'>
-                        <strong>Ocak</strong>
+                        <strong>{moment().format('MMMM')}</strong>
                     </p>
                 </div>
             </div>
@@ -21,10 +23,10 @@ const LeftSidebar = () => {
                     <li className='flex flex-col w-full'>
                         <div className='block text-day text-left'>
                             <p className=' text-price'>
-                                KOINB
+                                Bitcoin
                             </p>
                             <p className=''>
-                                12.02₺
+                                345.323₺
                             </p>
                             <p className=''>
                                 %0.65
@@ -33,118 +35,6 @@ const LeftSidebar = () => {
                     </li>
                 </ul>
             </div>
-        </div>
-        <div className='flex basis-5/12 bg-white rounded-2xl p-3 items-center'>
-            <ul className='flex flex-col text-day text-left w-full space-y-5'>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Öne Çıkanlar
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Bicoin
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Ethereum
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Dogecoin
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Altcoin
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Blockchain
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        NFT
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        Metaverse
-                    </div>
-                </Link>
-                </li>
-                <li className='flex group'>
-                <Link to="#" className='flex w-full items-center left-0 space-x-2'>
-                    <div className='flex'>
-                        <span className='flex bg-slate-400 bg-opacity-20 group-hover:bg-icon-bg group-hover:text-white duration-200 self-center p-1 rounded-md text-gray-500'>
-                            <BiWorld/>
-                        </span>
-                    </div>
-                    <div className='flex text-sm'>
-                        DeFi
-                    </div>
-                </Link>
-                </li>
-            </ul>
         </div>
         <div className='block basis-4/12 bg-white rounded-2xl p-3 space-y-3'>
             <div className='w-full text-left'>

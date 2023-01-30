@@ -7,8 +7,7 @@ import {FaTelegramPlane} from 'react-icons/fa'
 import {AiFillYoutube, AiFillInstagram} from 'react-icons/ai'
 import {MdKeyboardArrowDown, MdClose} from 'react-icons/md'
 import {AiOutlineSearch} from 'react-icons/ai'
-
-const NavbarMobile = ({setMobilNav, mobilNav}) => {
+const NavbarMobile = ({setMobilNav, mobilNav, categories}) => {
   const [mobilDropdown, setMobilDropdown] = useState(false)
   return (
     <>
@@ -34,24 +33,15 @@ const NavbarMobile = ({setMobilNav, mobilNav}) => {
                 mobilDropdown 
                 ? <li className='flex flex-row w-full'>
                     <div className='block items-start float-left text-left ml-4 space-y-2'>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">Bitcoin Haberleri</Link>
-                      </div>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">Ethereum Haberleri</Link>
-                      </div>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">Dogecoin Haberleri</Link>
-                      </div>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">Altcoin Haberleri</Link>
-                      </div>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">Blockchain Haberleri</Link>
-                      </div>
-                      <div className="grid grid-cols-1 gap-4 hover:text-sky-400">
-                        <Link to="#">NFT Haberleri</Link>
-                      </div>
+                      {
+                        categories?.map((item,index)=> {
+                          return (
+                            <div key={index} className="grid grid-cols-1 gap-4 hover:text-sky-400">
+                              <Link to={`/kategori/${item.category_slug}`}>{item.category_name}</Link>
+                            </div>
+                          )
+                        })
+                      }
                     </div>
                   </li>
                 : ""

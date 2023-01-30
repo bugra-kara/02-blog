@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import image from '../assets/images/bitcoin-86.jpg'
 const RightSidebar = () => {
   return (
     <div className='basis-3/12 sm:hidden lg:block flex-col py-4 px-0 md:px-3 space-y-5 float-left order-2 sm:order-last'>
@@ -9,6 +8,7 @@ const RightSidebar = () => {
             <span className=' font-black'>En Çok</span> Okunanlar
             </h5>
         </div>
+        {/* 
         <div className='flex flex-col py-5 px-3 space-y-3 bg-white rounded-xl items-center text-left'>
             <div className='flex'>
             <Link>
@@ -69,6 +69,7 @@ const RightSidebar = () => {
                 </span>
             </div>
         </div>
+        */}
     </div>
   )
 }
