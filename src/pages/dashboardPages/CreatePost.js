@@ -13,11 +13,24 @@ import { ToastContainer } from 'react-toastify';
 import { notify } from '../../utils.js/notifications';
 function CreatePost() {
   const {newPost, filteredCategories, getSection, filteredTags, draft} = useDashboardContext()
-  const [post, setPost] = useState({title: draft.title, subTitle: draft.subtitle, content: draft.content, slug: "", status: "", isheadline: false, author: localStorage.getItem('id'), categories: [], tags: []})
+  const [post, setPost] = useState({
+    title: draft.title,
+    subTitle: draft.subtitle,
+    content: draft.content,
+    slug: "",
+    status: "",
+    isheadline: false,
+    author: localStorage.getItem('id'),
+    categories: [],
+    tags: []
+  })
   const [modal, setModal] = useState({status: false, page: null})
   const [search, setSearch] = useState("")
   const handleChange = (e) => {
     setPost((prev)=> {return {...prev, [e.target.name]: e.target.value}} )
+  }
+  const handleCheck = () => {
+    setPost((prev)=> {return {...prev, isheadline: !post.isheadline}})
   }
   const handleEditor = (event,editor) => {
     setPost((prev)=> {return {...prev, content: editor.getData()}})
@@ -26,7 +39,15 @@ function CreatePost() {
     e.preventDefault()
     if((post.title !== "" && post.subTitle !== "" && post.content !== "" && post.slug !== "" && post.categories.length !== 0 && post.tags.length !== 0)) {
       newPost(post)
-      setPost({title: draft.title, subTitle: draft.subtitle, content: draft.content, slug: "", status: "1", author: localStorage.getItem('id'), categories: [], tags: []})
+      setPost({title: draft.title,
+        subTitle: draft.subtitle,
+        content: draft.content,
+        slug: "",
+        status: "",
+        isheadline: false,
+        author: localStorage.getItem('id'),
+        categories: [],
+        tags: []})
     }
     else {
       notify(100, 'Lütfen boş alanları doldurunuz!')
@@ -154,7 +175,7 @@ function CreatePost() {
               <div className='grid grid-flow-col items-center'>
                 <div className='flex text-xs space-x-1'>
                   <span className='font-bold flex space-x-1 items-center'> <span><BsCardHeading/></span> <span> Manşet:</span> </span>
-                  <input type="checkbox" name="isheadline" id="isheadline" value={post.isheadline} onChange={(e)=>{handleChange(e)}}/>
+                  <input type="checkbox" name="isheadline" id="isheadline" checked={post.isheadline} onChange={()=>{handleCheck()}}/>
                 </div>
               </div>
               <div className='grid grid-flow-col items-center'>

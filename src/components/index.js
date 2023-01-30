@@ -15,6 +15,7 @@ import Middle from './Middle'
 import ContentRightSidebar from './ContentRightSidebar'
 import CategoryMiddle from './CategoryMiddle'
 import AuthorMiddle from './AuthorMiddle'
+import LayoutReal from './LayoutReal'
 export {
     Navbar,
     Footer,
@@ -32,5 +33,6 @@ export {
     Middle,
     ContentRightSidebar,
     CategoryMiddle,
-    AuthorMiddle
+    AuthorMiddle,
+    LayoutReal
 }

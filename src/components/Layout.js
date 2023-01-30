@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Footer, Sidebar } from '../components';
+import { LayoutReal } from '../components';
 import { Home, About, Second, Error } from '../pages';
 import {Categories, CreatePost, EditPost, Posts, Tags, Users } from '../pages/dashboardPages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<PublicProvider><Navbar/></PublicProvider>}>
+        <Route element={<PublicProvider><LayoutReal/></PublicProvider>}>
           <Route index element={<PublicProvider><Home/></PublicProvider>}/>
           <Route path='/:id' element={<PublicProvider><SinglePage/></PublicProvider>}/>
           <Route path='/kategori/:id' element={<PublicProvider><Category/></PublicProvider>}/>
