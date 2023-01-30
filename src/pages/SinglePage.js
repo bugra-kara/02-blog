@@ -170,9 +170,13 @@ const SinglePage = () => {
                     </div>
                 </div>
             </div>
-            <div className='basis-4/12'>
-                <ContentRightSidebar/>
-            </div>
+            {
+                /* 
+                <div className='basis-4/12'>
+                    <ContentRightSidebar/>
+                </div>
+                */
+            }
         </div>
     </main>
   )
