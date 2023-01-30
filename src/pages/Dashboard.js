@@ -23,7 +23,6 @@ const Dashboard = () => {
       console.log(error);
     }
   }
-  console.log(draft);
   return (
     <div className='flex flex-col h-screen space-y-5'>
       {/* first section */}

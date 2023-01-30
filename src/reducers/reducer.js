@@ -11,7 +11,6 @@ const reducer = (state, action) => {
         if(action.payload === 'failed') {
             return { ...state, email: '', password: '' }
         }
-        console.log(action.payload);
         const { username, role, id } = action.payload
         localStorage.setItem('username', username)
         localStorage.setItem('role', role)

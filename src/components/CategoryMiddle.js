@@ -13,7 +13,7 @@ const CategoryMiddle = () => {
           <div className='flex basis-7/12 sm:basis-10/12 lg:basis-7/12 flex-col py-4 px-0 space-y-8 order-1 sm:order-2'>
               <div className='flex flex-col w-full px-3 pt-3 pb-6 bg-white rounded-xl'>
                   <div className='sm:flex'>
-                  <Link to={singleCategorie[0]?.slug}>
+                  <Link to={`/${singleCategorie[0]?.slug}`}>
                       <img src={singleCategorie[0]?.image_url} className="rounded-2xl" alt=""/>
                   </Link>
                   </div>
@@ -53,20 +53,20 @@ const CategoryMiddle = () => {
                   </div>
                   </div>
                   <div className='flex w-full text-left pl-2 pr-0.5'>
-                      <Link className='font-extrabold hover:text-kb sm:font-bold xl:font-extrabold text-xl sm:text-sm lg:text-xlx'>
+                      <Link to={`/${singleCategorie[0]?.slug}`} className='font-extrabold hover:text-kb sm:font-bold xl:font-extrabold text-xl sm:text-sm lg:text-xlx'>
                       {singleCategorie[0]?.title}
                       </Link>
                   </div>
                   <div className='flex px-2 pt-3 sm:pt-2 md:pt-2 lg:pt-3 space-x-5 font-semibold mr-auto'>
                       <span className='text-small text-gray-400'>
-                          BY <Link className=' text-link'>{singleCategorie[0]?.fullname}</Link>
+                          BY <Link className='text-link'>{singleCategorie[0]?.fullname}</Link>
                       </span>
                       <span className='text-small text-gray-400'>
                           {moment(singleCategorie[0]?.created_date).fromNow()}
                       </span>
                   </div>
               </div>
-              <aside>
+              <section>
                   <div className='grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-8'>
                   {
                     singleCategorie?.map((item, index)=> {
@@ -74,7 +74,7 @@ const CategoryMiddle = () => {
                         ?
                         <article key={index} className='flex flex-col space-y-3 md:space-y-4 lg:space-y-5 rounded-xl bg-white p-2'>
                             <div>
-                                <Link to={item.slug}>
+                                <Link to={`/${item.slug}`}>
                                     <img src={item.image_url} className="rounded-2xl" alt=""/>
                                 </Link>
                             </div>
@@ -90,7 +90,7 @@ const CategoryMiddle = () => {
                                 })}
                             </div>
                             <div className='flex w-full text-left pl-2 pr-0.5'>
-                                <Link to={item.slug} className='font-bold hover:text-kb sm:font-bold xl:font-extrabold text-xl sm:text-sm lg:text-xlx'>
+                                <Link to={`/${item.slug}`} className='font-bold hover:text-kb sm:font-bold xl:font-extrabold text-xl sm:text-sm lg:text-xlx'>
                                 {item.title}
                                 </Link>
                             </div>
@@ -116,7 +116,7 @@ const CategoryMiddle = () => {
                     })
                   }
                   </div>
-              </aside>
+              </section>
           </div>
         )
     }
